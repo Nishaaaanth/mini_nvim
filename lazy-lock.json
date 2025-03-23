@@ -1,0 +1,13 @@
+{
+  "blink.cmp": { "branch": "main", "commit": "1c8d8e45d6fba3d11512f4762b1fdf906bffca42" },
+  "friendly-snippets": { "branch": "main", "commit": "efff286dd74c22f731cdec26a70b46e5b203c619" },
+  "gruber-darker.nvim": { "branch": "main", "commit": "a2dda61d9c1225e16951a51d6b89795b0ac35cd6" },
+  "lazy.nvim": { "branch": "main", "commit": "6c3bda4aca61a13a9c63f1c1d1b16b9d3be90d7a" },
+  "mason.nvim": { "branch": "main", "commit": "fc98833b6da5de5a9c5b1446ac541577059555be" },
+  "nvim-lspconfig": { "branch": "master", "commit": "fb733ac734249ccf293e5c8018981d4d8f59fa8f" },
+  "nvim-treesitter": { "branch": "master", "commit": "e70cb73e943db7483b0ea86a55e80d471bcb995c" },
+  "plenary.nvim": { "branch": "master", "commit": "857c5ac632080dba10aae49dba902ce3abf91b35" },
+  "telescope-fzf-native.nvim": { "branch": "main", "commit": "1f08ed60cafc8f6168b72b80be2b2ea149813e55" },
+  "telescope.nvim": { "branch": "master", "commit": "a0bbec21143c7bc5f8bb02e0005fa0b982edc026" },
+  "tokyonight.nvim": { "branch": "main", "commit": "057ef5d260c1931f1dffd0f052c685dcd14100a3" }
+}
