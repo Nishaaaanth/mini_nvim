@@ -15,6 +15,20 @@ vim.g.bg = "dark"
 vim.o.hlsearch = false
 vim.o.signcolumn = "yes:1"
 
+-- Clipboard
+vim.g.clipboard = {
+  name = "WslClipboard",
+  copy = {
+    ["+"] = "clip.exe",
+    ["*"] = "clip.exe",
+  },
+  paste = {
+    ["+"] = 'powershell.exe -c [Console]::Out.Write($(Get-Clipboard -Raw).tostring().replace("`r", ""))',
+    ["*"] = 'powershell.exe -c [Console]::Out.Write($(Get-Clipboard -Raw).tostring().replace("`r", ""))',
+  },
+  cache_enabled = 0,
+}
+
 -- Split
 vim.o.splitbelow = true
 vim.o.splitright = true
@@ -38,8 +52,8 @@ vim.g.netrw_banner = 0
 vim.g.netrw_winsize = 26
 
 -- Augroup
-local yank_group = vim.api.nvim_create_augroup("Highlight-Yank", {clear = true})
-local terminal_group = vim.api.nvim_create_augroup("Terminal", {clear = true})
+local yank_group = vim.api.nvim_create_augroup("Highlight-Yank", { clear = true })
+local terminal_group = vim.api.nvim_create_augroup("Terminal", { clear = true })
 
 -- Autocmd
 vim.api.nvim_create_autocmd("TextYankPost", {

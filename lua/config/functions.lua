@@ -20,20 +20,19 @@ M.get_window = function(mode, orientation, message)
       vim.cmd.term()
       vim.cmd.start()
       vim.uv.sleep(sleep_time)
-      vim.api.nvim_feedkeys("cd ~/" .. curr_file_dir .. "\n", "t", true)
-      vim.api.nvim_win_set_height(0, 12)
+      vim.api.nvim_feedkeys("cd ~/" .. curr_file_dir .. "\nclear\n", "t", true)
     elseif orientation == "h" then
       vim.cmd.new()
       vim.cmd.term()
       vim.cmd.start()
       vim.uv.sleep(sleep_time)
-      vim.api.nvim_feedkeys("cd ~/" .. curr_file_dir .. "\n", "t", true)
+      vim.api.nvim_feedkeys("cd ~/" .. curr_file_dir .. "\nclear\n", "t", true)
       vim.api.nvim_win_set_height(0, 12)
     else
       vim.cmd.term()
-      vim.cmd.start()
-      vim.uv.sleep(sleep_time)
-      vim.api.nvim_feedkeys("cd ~/" .. curr_file_dir .. "\n", "t", true)
+      -- vim.cmd.start()
+      -- vim.uv.sleep(sleep_time)
+      -- vim.api.nvim_feedkeys("cd ~/" .. curr_file_dir .. "\nclear\n", "t", true)
     end
   elseif mode == "git" then
     if message == "add" then
@@ -64,7 +63,7 @@ M.get_window = function(mode, orientation, message)
   end
 end
 
-M.get_color = function (opts)
+M.get_color = function(opts)
   local color = opts.color or ""
   vim.cmd.colo(color)
 end

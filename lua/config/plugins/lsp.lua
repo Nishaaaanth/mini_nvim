@@ -29,6 +29,17 @@ return {
         capabilities = capabilities
       }
       lspconfig.clangd.setup {}
+      lspconfig.jdtls.setup {}
+      lspconfig.ts_ls.setup {}
+      lspconfig.tailwindcss.setup {
+        root_dir = function(fname)
+          return lspconfig.util.root_pattern("tailwind.config.js", "tailwind.config.ts", "package.json", ".git")(fname)
+          or vim.loop.cwd()
+        end
+      }
+      lspconfig.prismals.setup {}
+      lspconfig.jsonls.setup {}
+      lspconfig.clangd.setup {}
 
       vim.keymap.set('n', "<leader>lr", function() vim.lsp.buf.rename() end, { desc = "[L]sp [r]ename" })
       vim.keymap.set('n', "<leader>lk", function() vim.lsp.buf.hover() end, { desc = "[L]sp [k]nowledge" })

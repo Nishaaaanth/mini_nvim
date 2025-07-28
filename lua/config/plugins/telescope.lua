@@ -11,12 +11,13 @@ return {
     local builtin = require("telescope.builtin")
     local themes = require("telescope.themes")
     local grep = require("config.plugins.telescope.multigrep")
+    local home = os.getenv("HOME")
     telescope.setup {
       pickers = {
         find_files = {
           theme = "ivy"
         }
-     },
+      },
       extensions = {
         fzf = {}
       }
@@ -30,6 +31,12 @@ return {
         cwd = vim.fn.stdpath("config")
       }
     end)
+    vim.keymap.set('n', '<leader>sp', function()
+      builtin.find_files {
+        cwd = home .. "/coding"
+      }
+    end)
+    vim.keymap.set('n', '<leader>cs', builtin.colorscheme)
     vim.keymap.set('n', '<leader>sg', builtin.git_commits)
     vim.keymap.set('n', '<leader>sh', builtin.help_tags)
     vim.keymap.set('n', '<leader><leader>', function() builtin.oldfiles(themes.get_ivy()) end)
